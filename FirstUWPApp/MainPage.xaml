@@ -1,0 +1,55 @@
+﻿<Page x:Name="pgMain"
+    x:Class="FirstUWPApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FirstUWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FF121212" Loaded="Page_Loaded">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <TextBlock x:Name="txbName" Width="Auto" Text="Name" Margin="0,80,0,0"/>
+            <TextBox x:Name="txtName" Width="Auto" TextWrapping="NoWrap" />
+
+            <TextBlock x:Name="txbCellphoneNumber" Width="Auto" Text="Cellphone Number" Margin="0,40,0,0"/>
+            <TextBox x:Name="txtCellphoneNumber" Width="Auto" PlaceholderText="e.g 0795643723" TextWrapping="NoWrap" />
+
+            <TextBlock x:Name="txbSubcriptionTier" Width="Auto" Text="Subcription Tier (optional)" Margin="0,40,0,0"/>
+            <ComboBox x:Name="cmbSubcriptionTier" Width="Auto" SelectedIndex="0" >
+                <ComboBoxItem Content="None"></ComboBoxItem>
+                <ComboBoxItem Content="Bronze"></ComboBoxItem>
+                <ComboBoxItem Content="Silver"></ComboBoxItem>
+                <ComboBoxItem Content="Gold"></ComboBoxItem>
+            </ComboBox>
+
+            <Button x:Name="btnCreate"  Content="Create" Click="Button_Click" HorizontalAlignment="Center" Margin="0,40,0,8"/>
+        </StackPanel>
+
+        <ListBox x:Name="lstCustomers" Grid.Row="1" Grid.Column="0" Margin="16">
+            
+        </ListBox>
+        
+        <StackPanel Grid.Column="1" Grid.Row="1" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Width="Auto" Text="Bound Name" Margin="0,80,0,0"></TextBlock>
+            <TextBox Width="Auto"></TextBox>
+
+            <TextBlock Width="Auto" Text="Bound Cellphone Number" Margin="0,40,0,0"></TextBlock>
+            <TextBox></TextBox>
+
+            <TextBlock Width="Auto" Text="Bound Subscripton Tier" Margin="0,40,0,0"></TextBlock>
+            <TextBox></TextBox>
+        </StackPanel>
+
+    </Grid>
+</Page>
